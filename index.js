@@ -14,8 +14,10 @@ module.exports = function(session, options) {
         return config;
     }
 
+    // Disabled: Android, seems broken on Sauce Labs.
+
     var browsers = [
-        testBrowser('android', '4.3'),
+        //testBrowser('android', '4.3'),
         testBrowser('chrome'),
         testBrowser('firefox'),
         testBrowser('internet explorer', 11),
@@ -24,7 +26,7 @@ module.exports = function(session, options) {
     ];
 
     if (options && options.legacy) {
-        browsers.push(testBrowser('android', '4.0'));
+        //browsers.push(testBrowser('android', '4.0'));
         browsers.push(testBrowser('internet explorer', 10));
         browsers.push(testBrowser('internet explorer', 8));
         browsers.push(testBrowser('internet explorer', 9));
