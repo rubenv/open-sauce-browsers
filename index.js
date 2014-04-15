@@ -15,22 +15,22 @@ module.exports = function(session, options) {
     }
 
     var browsers = [
+        testBrowser('android', '4.3'),
         testBrowser('chrome'),
         testBrowser('firefox'),
-        testBrowser('safari', 5),
-        testBrowser('safari', 6),
-        testBrowser('safari', 7),
-        testBrowser('internet explorer', 9),
-        testBrowser('internet explorer', 10),
         testBrowser('internet explorer', 11),
-        testBrowser('iphone', '6.1'),
         testBrowser('iphone', '7.1'),
-        testBrowser('android', '4.0'),
-        testBrowser('android', '4.3'),
+        testBrowser('safari', 7),
     ];
 
     if (options && options.legacy) {
+        browsers.push(testBrowser('android', '4.0'));
+        browsers.push(testBrowser('internet explorer', 10));
         browsers.push(testBrowser('internet explorer', 8));
+        browsers.push(testBrowser('internet explorer', 9));
+        browsers.push(testBrowser('iphone', '6.1'));
+        browsers.push(testBrowser('safari', 5));
+        browsers.push(testBrowser('safari', 6));
     }
 
     return browsers;
