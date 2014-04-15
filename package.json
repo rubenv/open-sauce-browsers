@@ -1,0 +1,12 @@
+{
+  "name": "open-sauce-browsers",
+  "version": "0.0.0",
+  "description": "A shared configuration of the Open Sauce browsers I care about.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
