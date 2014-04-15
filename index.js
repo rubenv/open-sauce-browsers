@@ -1,4 +1,4 @@
-module.exports = function(session) { 
+module.exports = function(session, options) { 
     function testBrowser(name, version) {
         var config = {
             'browserName': name,
@@ -14,7 +14,7 @@ module.exports = function(session) {
         return config;
     }
 
-    return [
+    var browsers = [
         testBrowser('chrome'),
         testBrowser('firefox'),
         testBrowser('safari', 5),
@@ -27,5 +27,11 @@ module.exports = function(session) {
         testBrowser('iphone', '7.1'),
         testBrowser('android', '4.0'),
         testBrowser('android', '4.3'),
-    ]
+    ];
+
+    if (options && options.legacy) {
+        browsers.push(testBrowser('internet explorer', 8));
+    }
+
+    return browsers;
 };
